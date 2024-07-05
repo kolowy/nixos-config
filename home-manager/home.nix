@@ -53,6 +53,10 @@
     homeDirectory = "/home/jp";
   };
 
+  home.sessionVariables = {
+    EDITOR = "vim";
+  };
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
