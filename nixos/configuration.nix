@@ -22,6 +22,8 @@
     # ./users.nix
     ./i3.nix
     ./bluetooth.nix
+    ./printer.nix
+    ./sound.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix

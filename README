@@ -1,2 +1,5 @@
-i3
-blueman-applet
+WM : i3
+Bluetooth : blueman-applet
+Printer : CUPS
+Sound : Pulsse / alsa
+
