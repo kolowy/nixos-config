@@ -154,5 +154,6 @@
     ./programs.nix
     ./zsh.nix
     ./git.nix
+    ./nvim.nix
   ];
 }
