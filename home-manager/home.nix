@@ -61,37 +61,93 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-      home-manager 
-      alacritty
-      pulseaudio
-      pavucontrol
-
-      ripgrep
-      tree
-      wget
-      pciutils
-      usbutils
-
-      git
-      git-lfs
-      gnumake
-      gnupg
-      python3
-      vim
-
-      htop
-      unzip
-      zip
-      gnutar
-
-      cachix
-      nil
-      nix-info
-      nixpkgs-fmt
-      nixci
-      nix-health
-
-      flameshot
+    (discord.override { nss = nss_latest; })
+    apache-directory-studio
+    alacritty
+    arandr
+    awscli2
+    bat
+    bear
+    bitwarden
+    blueman
+    brightnessctl
+    cachix
+    cargo
+    chromium
+    clang-tools
+    conky
+    criterion
+    dig
+    docker
+    docker-compose
+    dunst
+    feh
+    file
+    flameshot
+    font-manager
+    gdb
+    git-lfs
+    gnutar
+    htop
+    inconsolata-nerdfont
+    iosevka
+    jdk
+    jq
+    libnotify
+    libreoffice
+    libyamlcpp
+    nerdfonts
+    nitrogen
+    nix-health
+    nil
+    nix-info
+    nixpkgs-fmt
+    nixci
+    nodePackages_latest.bash-language-server
+    nodePackages_latest.dockerfile-language-server-nodejs
+    nodePackages_latest.typescript-language-server
+    nodePackages_latest.vscode-langservers-extracted
+    nodePackages_latest.yaml-language-server
+    nodejs
+    noto-fonts-emoji
+    olvid
+    openssl
+    openvpn
+    papirus-icon-theme
+    pavucontrol
+    picom
+    poetry
+    postgresql
+    pulseaudio
+    ripgrep
+    slack
+    slrn
+    sqlfluff
+    sqls
+    sshfs
+    sumneko-lua-language-server
+    tree
+    unzip
+    valgrind
+    virt-manager
+    virtualbox
+    vim
+    vscodium
+    weechat
+    wget
+    wireguard-tools
+    wireshark
+    xdg-utils
+    xfce.xfce4-terminal
+    xidlehook
+    xsel
+    xss-lock
+    xz
+    yamllint
+    yarn
+    yq
+    zip
+    zlib
   ];
 
   imports = [
