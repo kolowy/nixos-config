@@ -61,7 +61,7 @@
       enable = true;
       userName = "Paul Dufour";
       userEmail = "paul.dufour@epita.fr";
-      ignores = [ "*~" "*.swp" ];
+      ignores = [ "*~" "*.swp" "swo" ];
       aliases = {
         kk = "status";
       };

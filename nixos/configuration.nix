@@ -20,6 +20,8 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
+    ./i3.nix
+    ./bluetooth.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -111,34 +113,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   environment.pathsToLink = [ "/libexec" ];
-
-  # Configure keymap in X11
-  services.displayManager = {
-      defaultSession = "none+i3";
-  };
-
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-    
-    desktopManager = {
-      xterm.enable = false;
-    };
-
-
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-	dmenu
-	i3status
-	i3lock
-	i3blocks
-      ];
-    };
-  };
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {

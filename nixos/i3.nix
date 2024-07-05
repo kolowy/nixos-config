@@ -1,4 +1,4 @@
-{ flake, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 {
   # Configure keymap in X11
   services.displayManager = {
