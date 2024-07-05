@@ -113,18 +113,21 @@
   environment.pathsToLink = [ "/libexec" ];
 
   # Configure keymap in X11
+  services.displayManager = {
+      defaultSession = "none+i3";
+  };
+
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
     
     desktopManager = {
       xterm.enable = false;
     };
 
-    displayManager = {
-      defaultSession = "none+i3";
-    };
 
     windowManager.i3 = {
       enable = true;
@@ -145,7 +148,7 @@
       # TODO: You can set an initial password for your user.
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
       # Be sure to change it (using passwd) after rebooting!
-      # initialPassword = "toto";
+      initialPassword = "toto";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect

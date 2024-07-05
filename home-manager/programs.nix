@@ -60,7 +60,7 @@
     git = {
       enable = true;
       userName = "Paul Dufour";
-      # userEmail = "paul.dufour@epita.fr";
+      userEmail = "paul.dufour@epita.fr";
       ignores = [ "*~" "*.swp" ];
       aliases = {
         kk = "status";
