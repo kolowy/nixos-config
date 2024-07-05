@@ -97,6 +97,7 @@
     libreoffice
     libyamlcpp
     nerdfonts
+    networkmanagerapplet
     nitrogen
     nix-health
     nil
