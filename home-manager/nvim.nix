@@ -1,22 +1,28 @@
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
+    (neovim.override {
+      withPython3 = true;
+      withNodeJs = true;
+      viAlias = true;
+    })
+
+    alejandra
+    cargo
+    deadnix
     ripgrep
-    lua-language-server
-    pyright
+    ruff
+    tree-sitter
+    statix
+    gcc
   ];
 
-  programs.neovim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
-      LazyVim
-      lazy-lsp-nvim
-    ];
-  };
-
-#  home.file."./.config/nvim/" = {
- #   source = ./dotfiles/lazy.nvim;
+  #xdg.configFile."nvim" = {
+  #  source = ./nvim;
   #  recursive = true;
   #};
 }

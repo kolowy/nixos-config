@@ -133,7 +133,6 @@
     valgrind
     virt-manager
     virtualbox
-    vim
     vscodium
     weechat
     wget
@@ -156,6 +155,7 @@
     ./programs.nix
     ./zsh.nix
     ./git.nix
+    ./vim.nix
     ./nvim.nix
   ];
 }
