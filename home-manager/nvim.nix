@@ -15,8 +15,8 @@
     ];
   };
 
-  home.file."./.config/nvim/" = {
-    source = ./dotfiles/lazy.nvim;
-    recursive = true;
-  };
+#  home.file."./.config/nvim/" = {
+ #   source = ./dotfiles/lazy.nvim;
+  #  recursive = true;
+  #};
 }

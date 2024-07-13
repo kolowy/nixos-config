@@ -115,6 +115,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # support ntfs drive
+  boot.supportedFilesystems = [ "ntfs" ];
+
   environment.pathsToLink = [ "/libexec" ];
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.
@@ -131,7 +134,7 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" ];
       packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
     };
   };

@@ -70,6 +70,7 @@
     bear
     bitwarden
     blueman
+    brave
     brightnessctl
     cachix
     cargo
