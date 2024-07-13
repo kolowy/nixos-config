@@ -156,7 +156,6 @@
       };
       extraConfig = {
         init.defaultBranch = "main";
-        pull.rebase = "false";
         commit.verbose = true;
       };
       lfs.enable = true;
