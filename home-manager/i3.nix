@@ -7,6 +7,7 @@
       modifier = "Mod4";
       bars = [{
         position = "top";
+        statusCommand = "${pkgs.i3status}/bin/i3status";
       }];
     };
   };
