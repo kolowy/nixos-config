@@ -121,6 +121,7 @@
     poetry
     postgresql
     pulseaudio
+    pavucontrol
     ripgrep
     slack
     slrn
