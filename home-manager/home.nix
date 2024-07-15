@@ -157,5 +157,6 @@
     ./git.nix
     ./vim.nix
     ./nvim.nix
+    ./i3.nix
   ];
 }
