@@ -118,6 +118,9 @@
   # support ntfs drive
   boot.supportedFilesystems = [ "ntfs" ];
 
+  # Clean tmp directory
+  boot.tmp.cleanOnBoot = true;
+
   environment.pathsToLink = [ "/libexec" ];
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.
