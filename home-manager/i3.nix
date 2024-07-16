@@ -13,6 +13,14 @@
         position = "top";
         statusCommand = "${pkgs.i3status}/bin/i3status";
       }];
+      startup = [
+        { command = "--nostartup-id xss-lock --transfer-sleep-lock -- i3lock --nofork"; }
+      ];
+      keycodebindings = {
+        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%";
+        "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%";
+      };
     };
     extraConfig = ''
       #Hide window title bar
