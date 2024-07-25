@@ -1,12 +1,14 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  mode,
+  pkgs,
+  lib,
+  ...
 }: {
   home.packages = with pkgs; [
     (neovim.override {
       withPython3 = true;
       withNodeJs = true;
+      vimAlias = true;
       viAlias = true;
     })
 
@@ -17,11 +19,10 @@
     ruff
     tree-sitter
     statix
-    gcc
   ];
 
-  #xdg.configFile."nvim" = {
-  #  source = ./nvim;
-  #  recursive = true;
-  #};
+  xdg.configFile."nvim" = {
+    source = ./config;
+    recursive = true;
+  };
 }

@@ -3,9 +3,10 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  alacritty = import ./alacritty.nix;
+  astronvim = import ./astronvim;
   git = import ./git.nix;
   i3 = import ./i3.nix;
-  nvim = import ./nvim.nix;
   vim = import ./vim.nix;
   zsh = import ./zsh.nix;
 }

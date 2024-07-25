@@ -11,9 +11,10 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
+    outputs.homeManagerModules.alacritty
+    outputs.homeManagerModules.astronvim
     outputs.homeManagerModules.git
     outputs.homeManagerModules.i3
-    outputs.homeManagerModules.nvim
     outputs.homeManagerModules.vim
     outputs.homeManagerModules.zsh
 
