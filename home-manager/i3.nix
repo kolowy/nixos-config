@@ -9,8 +9,12 @@ in
     config = {
       modifier = "Mod4";
       terminal = "alacritty";
+      defaultWorkspace = 1;
+      workspaceAutoBackAndForth = true;
       window = {
-        hideEdgeBorders = "none";
+        titlebar = false; # Configure border style <pixel xx>
+        border = 0; # Configure border style <xx 0>
+        hideEdgeBorders = "smart"; # Hide borders
       };
       bars = [{
         position = "top";
@@ -29,18 +33,18 @@ in
             "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%";
             "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%";
 
-            "XF86MonBrightnessUp" = "exec --no-startup-id xbacklight -inc 5";
-            "XF86MonBrightnessDown" = "exec --no-startup-id xbacklight -dec 5";
+            "XF86MonBrightnessUp" = "exec --no-startup-id brightnessctl s +5%";
+            "XF86MonBrightnessDown" = "exec --no-startup-id brightnessctl s 5%-";
 
-            "XF86Display" = "exec arandr";
+            "F8" = "exec arandr";
+            "F9" = "exec i3lock";
+            "F11" = "exec flameshot gui";
+            "F12" = "exec ${pkgs.alacritty}/bin/alacritty -t htop -e ${pkgs.htop}/bin/htop &";
+            "Print" = "exec flameshot full";
           };
       keycodebindings = { };
     };
     extraConfig = ''
-      #Hide window title bar
-      default_border pixel 1
-      default_floating_border pixel 1
-      for_window [class="^.*"] border pixel 1
     '';
   };
 }
