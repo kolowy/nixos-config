@@ -123,6 +123,10 @@
 
   environment.pathsToLink = [ "/libexec" ];
 
+  programs.nix-ld.enable = true;
+
+  security.sudo.enable = true;
+
   # Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username

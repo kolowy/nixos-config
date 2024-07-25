@@ -162,7 +162,7 @@
 
       includes = [
         {
-          condition = "hasconfig:remote.*.url:*:prologin.org/**/**";
+          condition = "hasconfig:remote.*.url:*:prologin/**/**";
           contents = {
             user.email = "paul.dufour@prologin.org";
           };
