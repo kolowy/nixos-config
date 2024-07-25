@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     oh-my-zsh
@@ -15,7 +14,7 @@
       enable = true;
       defaultEditor = true;
       plugins = with pkgs.vimPlugins; [
-	vim-airline
+        vim-airline
         vim-airline-themes
         gruvbox
         coc-nvim
@@ -23,7 +22,7 @@
         plenary-nvim
         telescope-nvim
       ];
-      extraConfig = builtins.readFile(vimConfig/vimrc);
+      extraConfig = builtins.readFile (vimConfig/vimrc);
     };
   };
 }

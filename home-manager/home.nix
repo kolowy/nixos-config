@@ -1,12 +1,11 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
 
   nixpkgs = {
@@ -71,19 +70,17 @@
     bear
     bitwarden
     blueman
+    blueberry
     brave
     brightnessctl
     cachix
-    cargo
     chromium
     clang-tools
-    conky
     criterion
     dig
     docker
     docker-compose
     dunst
-    feh
     file
     flameshot
     font-manager
@@ -91,29 +88,19 @@
     git-lfs
     gnutar
     htop
-    inconsolata-nerdfont
-    iosevka
     jdk
     jq
     libnotify
     libreoffice
     libyamlcpp
-    nerdfonts
     networkmanagerapplet
-    nitrogen
     nix-health
     nil
     nix-info
     nixpkgs-fmt
     nixci
-    nodePackages_latest.bash-language-server
-    nodePackages_latest.dockerfile-language-server-nodejs
-    nodePackages_latest.typescript-language-server
-    nodePackages_latest.vscode-langservers-extracted
-    nodePackages_latest.yaml-language-server
     nodejs
     noto-fonts-emoji
-    olvid
     openssl
     openvpn
     papirus-icon-theme
@@ -125,22 +112,18 @@
     pavucontrol
     ripgrep
     slack
-    slrn
     sqlfluff
     sqls
     sshfs
-    sumneko-lua-language-server
     tree
     unzip
     valgrind
     virt-manager
     virtualbox
     vscodium
-    weechat
     wget
     wireguard-tools
     wireshark
-    xdg-utils
     xfce.xfce4-terminal
     xidlehook
     xsel

@@ -2,7 +2,7 @@
 {
   # Configure keymap in X11
   services.displayManager = {
-      defaultSession = "none+i3";
+    defaultSession = "none+i3";
   };
 
   services.xserver = {
@@ -11,7 +11,7 @@
       layout = "us";
       variant = "";
     };
-    
+
     desktopManager = {
       xterm.enable = false;
     };
