@@ -9,7 +9,7 @@ in
     config = {
       modifier = "Mod4";
       terminal = "alacritty";
-      defaultWorkspace = 1;
+      defaultWorkspace = "1";
       workspaceAutoBackAndForth = true;
       window = {
         titlebar = false; # Configure border style <pixel xx>

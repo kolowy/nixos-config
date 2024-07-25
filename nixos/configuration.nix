@@ -11,6 +11,11 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
+    outputs.nixosModules.bluetooth
+    outputs.nixosModules.i3
+    outputs.nixosModules.printer
+    outputs.nixosModules.sound
+    outputs.nixosModules.virt
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -19,11 +24,6 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
-    ./i3.nix
-    ./bluetooth.nix
-    ./printer.nix
-    ./sound.nix
-    ./virt.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -128,10 +128,9 @@
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
-    # FIXME: Replace with your username
     jp = {
       description = "jp";
-      # TODO: You can set an initial password for your user.
+      # Initial password for your user.
       # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
       # Be sure to change it (using passwd) after rebooting!
       initialPassword = "toto";
@@ -139,7 +138,7 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
+      # Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "networkmanager" "wheel" "docker" "audio" ];
       packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
     };
