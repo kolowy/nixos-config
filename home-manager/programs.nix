@@ -1,9 +1,11 @@
-{ flake, pkgs, ... }:
 {
+  flake,
+  pkgs,
+  ...
+}: {
   imports = [
   ];
   programs = {
-
     # Better `cat`
     bat.enable = true;
     # Type `z <pat>` to cd to some directory
@@ -13,7 +15,6 @@
     jq.enable = true;
     htop.enable = true;
 
-
     # https://nixos.asia/en/direnv
     direnv = {
       enable = true;
@@ -22,7 +23,7 @@
   };
 
   home.packages = with pkgs; [
-    (discord.override { nss = nss_latest; })
+    (discord.override {nss = nss_latest;})
     apache-directory-studio
     alacritty
     arandr
@@ -71,6 +72,8 @@
     postgresql
     pulseaudio
     pavucontrol
+    prismlauncher
+    qemu_kvm
     ripgrep
     slack
     sqlfluff

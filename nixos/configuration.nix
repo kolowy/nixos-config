@@ -1,11 +1,12 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -18,8 +19,9 @@
     outputs.nixosModules.virt
 
     # Or modules from other flakes (such as nixos-hardware):
+    # add your model from this list: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
     # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
+    # inputs.hardware.nixosModules.asus-zenbook-ux371
     inputs.home-manager.nixosModules.home-manager
 
     # You can also split up your configuration and import pieces of it here:
@@ -56,18 +58,18 @@
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
-  nix.registry = (lib.mapAttrs (_: flake: { inherit flake; })) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+  nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
   # This will additionally add your inputs to the system's legacy channels
   # Making legacy nix commands consistent as well, awesome!
-  nix.nixPath = [ "/etc/nix/path" ];
+  nix.nixPath = ["/etc/nix/path"];
   environment.etc =
     lib.mapAttrs'
-      (name: value: {
-        name = "nix/path/${name}";
-        value.source = value.flake;
-      })
-      config.nix.registry;
+    (name: value: {
+      name = "nix/path/${name}";
+      value.source = value.flake;
+    })
+    config.nix.registry;
 
   nix.settings = {
     # Enable flakes and new 'nix' command
@@ -99,13 +101,12 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
       jp = import ../home-manager/home.nix;
     };
   };
-
 
   # Set your hostname
   networking.hostName = "jp";
@@ -115,16 +116,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # support ntfs drive
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
 
   # Clean tmp directory
   boot.tmp.cleanOnBoot = true;
 
-  environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = ["/libexec"];
 
   programs.nix-ld.enable = true;
-
-  security.sudo.enable = true;
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -139,10 +138,12 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "networkmanager" "wheel" "docker" "audio" ];
-      packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
+      extraGroups = ["networkmanager" "wheel" "docker" "audio" "libvirtd" "kvm"];
+      packages = [inputs.home-manager.packages.${pkgs.system}.default];
     };
   };
+
+  services.teamviewer.enable = true;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
