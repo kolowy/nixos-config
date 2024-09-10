@@ -17,6 +17,7 @@
     outputs.nixosModules.printer
     outputs.nixosModules.sound
     outputs.nixosModules.virt
+    outputs.nixosModules.yubikey
 
     # Or modules from other flakes (such as nixos-hardware):
     # add your model from this list: https://github.com/NixOS/nixos-hardware/blob/master/flake.nix

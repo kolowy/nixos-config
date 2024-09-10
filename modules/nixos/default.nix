@@ -8,4 +8,5 @@
   printer = import ./printer.nix;
   sound = import ./sound.nix;
   virt = import ./virt.nix;
+  yubikey = import ./yubikey.nix;
 }

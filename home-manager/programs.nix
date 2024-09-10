@@ -38,6 +38,15 @@
     cachix
     chromium
     clang-tools
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        bbenoist.nix
+        ms-python.python
+        ms-azuretools.vscode-docker
+        batisteo.vscode-django
+        vscodevim.vim
+      ];
+    })
     criterion
     dig
     docker
@@ -49,6 +58,7 @@
     gdb
     git-lfs
     gnutar
+    gnupg
     htop
     jdk
     jq
