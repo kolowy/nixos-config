@@ -58,6 +58,7 @@
   home.sessionVariables = {
     EDITOR = "vim";
     NIX_LD = "$HOME/.nix-profile/bin/nix-ld";
+    TERM = "xterm-256color";
   };
 
   # Enable home-manager and git

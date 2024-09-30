@@ -36,6 +36,9 @@
         enable = true;
         plugins = [
           "git"
+          "terraform"
+          "kubectl"
+          "zsh-autosuggestions"
         ];
       };
       plugins = [
@@ -53,6 +56,7 @@
       shellAliases = {
         ls = "ls --color=auto";
         cat = "bat";
+        k = "kubectl";
       };
     };
 
