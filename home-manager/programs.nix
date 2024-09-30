@@ -26,6 +26,7 @@
     (discord.override {nss = nss_latest;})
     apache-directory-studio
     alacritty
+    ansible
     arandr
     awscli2
     bat
@@ -53,6 +54,7 @@
     docker-compose
     dunst
     file
+    firefox
     flameshot
     font-manager
     gdb
@@ -62,9 +64,12 @@
     htop
     jdk
     jq
+    kubectl
+    kubernetes-helm
     libnotify
     libreoffice
     libyamlcpp
+    llvmPackages_12.libcxxClang
     networkmanagerapplet
     nix-health
     nil
@@ -90,6 +95,7 @@
     sqls
     sshfs
     tree
+    tmux
     unzip
     valgrind
     virt-manager

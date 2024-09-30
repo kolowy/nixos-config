@@ -14,7 +14,7 @@
     # outputs.nixosModules.example
     outputs.nixosModules.bluetooth
     outputs.nixosModules.i3
-    outputs.nixosModules.printer
+    # outputs.nixosModules.printer
     outputs.nixosModules.sound
     outputs.nixosModules.virt
     outputs.nixosModules.yubikey
@@ -139,7 +139,7 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["networkmanager" "wheel" "docker" "audio" "libvirtd" "kvm"];
+      extraGroups = ["networkmanager" "wheel" "audio" "libvirtd" "kvm"];
       packages = [inputs.home-manager.packages.${pkgs.system}.default];
     };
   };
