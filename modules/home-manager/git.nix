@@ -4,11 +4,6 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    oh-my-zsh
-    zsh
-  ];
-
   programs = {
     # https://nixos.asia/en/git
     git = {

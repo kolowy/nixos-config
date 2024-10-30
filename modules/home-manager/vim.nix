@@ -1,13 +1,9 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }: {
-  home.packages = with pkgs; [
-    oh-my-zsh
-    zsh
-  ];
-
   programs = {
     # https://nixos.asia/en/git
     vim = {
@@ -22,7 +18,7 @@
         plenary-nvim
         telescope-nvim
       ];
-      extraConfig = builtins.readFile (vimConfig/vimrc);
+      extraConfig = builtins.readFile vimConfig/vimrc;
     };
   };
 }

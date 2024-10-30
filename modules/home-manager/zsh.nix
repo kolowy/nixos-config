@@ -30,7 +30,7 @@
       '';
       envExtra = ''
         # Make Nix and home-manager installed things available in PATH.
-        export PATH=/run/current-system/sw/bin/:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH
+        export PATH=/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH
       '';
       oh-my-zsh = {
         enable = true;
@@ -38,7 +38,6 @@
           "git"
           "terraform"
           "kubectl"
-          "zsh-autosuggestions"
         ];
       };
       plugins = [
