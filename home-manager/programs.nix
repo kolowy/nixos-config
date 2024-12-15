@@ -114,5 +114,7 @@
     yq
     zip
     zlib
+
+    dconf
   ];
 }
