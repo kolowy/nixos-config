@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     oh-my-zsh
@@ -38,6 +37,7 @@
           "git"
           "terraform"
           "kubectl"
+          "sudo"
         ];
       };
       plugins = [
@@ -68,6 +68,18 @@
           format = "[$user]($style) ";
           disabled = false;
           show_always = true;
+        };
+        hostname = {
+          ssh_only = false;
+          ssh_symbol = "🌐 ";
+          format = "on [$hostname](bold red) ";
+          trim_at = ".local";
+          disabled = false;
+        };
+
+        kubernetes = {
+          format = "on [⛵\($namespace\)](green) ";
+          disabled = false;
         };
       };
     };

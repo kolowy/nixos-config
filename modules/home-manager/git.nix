@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: {
   programs = {
     # https://nixos.asia/en/git
@@ -160,6 +159,12 @@
           condition = "hasconfig:remote.*.url:*:prologin/**/**";
           contents = {
             user.email = "paul.dufour@prologin.org";
+          };
+        }
+        {
+          condition = "hasconfig:remote.*.url:*gitlab.corp.dblc.io:**/**";
+          contents = {
+            user.email = "paul.dufour@diabolocom.com";
           };
         }
       ];

@@ -1,17 +1,14 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   # You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
     outputs.homeManagerModules.alacritty
     outputs.homeManagerModules.git
     outputs.homeManagerModules.i3
@@ -56,6 +53,7 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
+    BROWSER = "brave";
   };
 
   # Enable home-manager and git

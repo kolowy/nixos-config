@@ -1,13 +1,10 @@
-{
-  flake,
-  pkgs,
-  ...
+{ flake
+, pkgs
+, ...
 }: {
   imports = [
   ];
   programs = {
-    # Better `cat`
-    bat.enable = true;
     # Type `z <pat>` to cd to some directory
     zoxide.enable = true;
     # Type `<ctrl> + r` to fuzzy search your shell history
@@ -23,7 +20,7 @@
   };
 
   home.packages = with pkgs; [
-    (discord.override {nss = nss_latest;})
+    (discord.override { nss = nss_latest; })
     apache-directory-studio
     alacritty
     ansible
@@ -66,6 +63,7 @@
     jq
     kubectl
     kubernetes-helm
+    kns
     libnotify
     libreoffice
     libyamlcpp
