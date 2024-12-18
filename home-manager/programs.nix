@@ -1,6 +1,7 @@
-{ flake
-, pkgs
-, ...
+{
+  flake,
+  pkgs,
+  ...
 }: {
   imports = [
   ];
@@ -20,7 +21,7 @@
   };
 
   home.packages = with pkgs; [
-    (discord.override { nss = nss_latest; })
+    (discord.override {nss = nss_latest;})
     apache-directory-studio
     alacritty
     ansible

@@ -1,9 +1,10 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -39,7 +40,6 @@
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
-
     ];
     config = {
       allowUnfree = true;
@@ -48,18 +48,18 @@
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
-  nix.registry = (lib.mapAttrs (_: flake: { inherit flake; })) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+  nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
   # This will additionally add your inputs to the system's legacy channels
   # Making legacy nix commands consistent as well, awesome!
-  nix.nixPath = [ "/etc/nix/path" ];
+  nix.nixPath = ["/etc/nix/path"];
   environment.etc =
     lib.mapAttrs'
-      (name: value: {
-        name = "nix/path/${name}";
-        value.source = value.flake;
-      })
-      config.nix.registry;
+    (name: value: {
+      name = "nix/path/${name}";
+      value.source = value.flake;
+    })
+    config.nix.registry;
 
   nix.settings = {
     # Enable flakes and new 'nix' command
@@ -91,7 +91,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
       jp = import ../home-manager/home.nix;
@@ -105,12 +105,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # support ntfs drive
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
 
   # Clean tmp directory
   boot.tmp.cleanOnBoot = true;
 
-  environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = ["/libexec"];
 
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
@@ -124,8 +124,8 @@
       # Be sure to change it (using passwd) after rebooting!
       initialPassword = "toto";
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "audio" "libvirtd" "kvm" ];
-      packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
+      extraGroups = ["networkmanager" "wheel" "audio" "libvirtd" "kvm"];
+      packages = [inputs.home-manager.packages.${pkgs.system}.default];
       shell = pkgs.zsh;
     };
   };

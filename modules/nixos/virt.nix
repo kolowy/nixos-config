@@ -1,8 +1,9 @@
-{ config
-, lib
-, pkgs
-, modulesPath
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
 }: {
   virtualisation = {
     docker.enable = true;
@@ -15,7 +16,7 @@
       enable = false;
       qemu = {
         swtpm.enable = true;
-        ovmf.packages = [ (pkgs.OVMFFull).fd ];
+        ovmf.packages = [(pkgs.OVMFFull).fd];
       };
     };
   };

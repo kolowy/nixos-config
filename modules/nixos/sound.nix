@@ -1,5 +1,10 @@
-{ config, lib, pkgs, modulesPath, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}: {
   #hardware.pulseaudio.package = pkgs.pulseaudioFull;
   #hardware.pulseaudio.enable = true;
   #hardware.pulseaudio.enable = true;
